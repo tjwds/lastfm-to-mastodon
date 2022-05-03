@@ -8,7 +8,7 @@ const emit = async (trackText) => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "Idempotency-Key": trackText,
+      "Idempotency-Key": Number(new Date()),
       Authorization: `Bearer ${process.env.MASTODON_BEARER_TOKEN}`,
     },
     body: JSON.stringify(params),
